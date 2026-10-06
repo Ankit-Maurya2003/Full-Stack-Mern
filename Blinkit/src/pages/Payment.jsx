@@ -56,7 +56,7 @@ const Payment = () => {
   // =========================
 
   const itemsTotal = Number(totalPrice()) || 0;
-  const handlingCharge = 150;
+  const handlingCharge = 10;
   const grandTotal = itemsTotal + handlingCharge;
 
   // =========================
