@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const CATEGORY_API = "http://localhost:4005/category";
-const PRODUCT_API = "http://localhost:4005/product";
+const CATEGORY_API = "https://full-stack-mern-qqdj.onrender.com/category";
+const PRODUCT_API = "https://full-stack-mern-qqdj.onrender.com/product";
 
 const AddProduct = ({
   initialData,

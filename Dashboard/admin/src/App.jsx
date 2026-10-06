@@ -2,6 +2,8 @@ import React, { useState } from "react";
 
 import Sidebar from "./components/Sidebar";
 import MobileNavbar from "./components/MobileNavbar";
+import Login from "./components/Login";
+
 import Dashboard from "./components/Dashboard";
 import Cate from "./components/Category";
 import AddCategory from "./components/AddCategory";
@@ -11,12 +13,33 @@ import Orders from "./components/Orders";
 import Users from "./components/Users";
 
 const App = () => {
+
+  // =====================================
+  // LOGIN STATE
+  // =====================================
+
+  const [isLoggedIn, setIsLoggedIn] = useState(
+    !!localStorage.getItem("token")
+  );
+
+  // =====================================
+  // LOGOUT
+  // =====================================
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("role");
+
+    setIsLoggedIn(false);
+  };
+
+  // =====================================
+  // DASHBOARD STATES
+  // =====================================
+
   const [activePage, setActivePage] = useState("Dashboard");
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
-
-  const [showLogoutModal, setShowLogoutModal] =
-    useState(false);
 
   const [categories, setCategories] = useState([]);
 
@@ -41,12 +64,6 @@ const App = () => {
     setEditingCategory(category);
     setActivePage("Add category");
   };
-
-  // =====================================
-  // CATEGORY SAVE
-  // API Category.jsx / AddCategory.jsx
-  // ME HANDLE HOGI
-  // =====================================
 
   const handleCategorySaved = () => {
     setEditingCategory(null);
@@ -94,7 +111,19 @@ const App = () => {
   };
 
   // =====================================
-  // UI
+  // LOGIN PAGE
+  // =====================================
+
+  if (!isLoggedIn) {
+    return (
+      <Login
+        onLogin={() => setIsLoggedIn(true)}
+      />
+    );
+  }
+
+  // =====================================
+  // DASHBOARD
   // =====================================
 
   return (
@@ -111,9 +140,7 @@ const App = () => {
           setActivePage={navigate}
           sidebarOpen={sidebarOpen}
           setSidebarOpen={setSidebarOpen}
-          onLogout={() =>
-            setShowLogoutModal(true)
-          }
+          onLogout={handleLogout}
         />
 
         <main className="flex-1 min-w-0 lg:ml-0 pt-16 lg:pt-0">
@@ -195,15 +222,11 @@ const App = () => {
               <Users />
             )}
 
-          
-
           </div>
 
         </main>
 
       </div>
-
-     
 
     </div>
   );

@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 
 
-const API = "http://localhost:4005/users";
+const API = "https://full-stack-mern-qqdj.onrender.com/users";
 
 
 const Users = () => {

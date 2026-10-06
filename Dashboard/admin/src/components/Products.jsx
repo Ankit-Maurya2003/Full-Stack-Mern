@@ -10,8 +10,8 @@ import {
   ChevronRight,
 } from "lucide-react";
 
-const API = "http://localhost:4005/product";
-const CATEGORY_API = "http://localhost:4005/category";
+const API = "https://full-stack-mern-qqdj.onrender.com/product";
+const CATEGORY_API = "https://full-stack-mern-qqdj.onrender.com/category";
 
 const Products = ({
   products: initialProducts = [],

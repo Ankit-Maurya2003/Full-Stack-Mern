@@ -10,7 +10,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 
-const API = "http://localhost:4005/category";
+const API = "https://full-stack-mern-qqdj.onrender.com/category";
 
 const Cate = ({
   categories: initialCategories = [],

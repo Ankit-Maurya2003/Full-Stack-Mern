@@ -22,7 +22,7 @@ import {
 
 import axios from "axios";
 
-const API = "http://localhost:4005";
+const API = "https://full-stack-mern-qqdj.onrender.com";
 
 const Dashboard = ({ setActivePage }) => {
   const [categories, setCategories] = useState([]);

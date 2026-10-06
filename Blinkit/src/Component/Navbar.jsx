@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "./Supplier";
@@ -12,7 +11,6 @@ const Navbar = () => {
     totalCount,
     item,
     logout,
-    role,
     token,
     search,
     addToCart,
@@ -35,8 +33,6 @@ const Navbar = () => {
   const grandTotal = Number(totalPrice()) + handlingCharge;
 
   const [error, setError] = useState({});
-
-  // MOBILE MENU
   const [mobileMenu, setMobileMenu] = useState(false);
 
   const [formData, setFormData] = useState({
@@ -125,10 +121,7 @@ const Navbar = () => {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="mx-auto h-auto max-w-xl bg-white p-5">
-              <form
-                onSubmit={handleSubmit}
-                className="mx-10 mt-10"
-              >
+              <form onSubmit={handleSubmit} className="mx-10 mt-10">
                 <h1>
                   <strong className="md:text-3xl">
                     Login
@@ -527,9 +520,7 @@ const Navbar = () => {
                     type="text"
                     placeholder='Search "chocolate"'
                     value={search}
-                    onChange={(e) =>
-                      setSearch(e.target.value)
-                    }
+                    onChange={(e) => setSearch(e.target.value)}
                     className="ml-3 w-full truncate bg-transparent text-lg outline-none placeholder-gray-500"
                   />
                 </Link>
@@ -553,19 +544,6 @@ const Navbar = () => {
                     Login
                   </button>
                 </Link>
-              )}
-
-              {/* ADMIN */}
-              {role === "admin" && (
-                <button
-                  onClick={() => {
-                    window.location.href =
-                      "http://localhost:5174/";
-                  }}
-                  className="rounded-lg bg-blue-600 px-4 py-2 font-semibold text-white"
-                >
-                  Admin
-                </button>
               )}
 
               {/* MY ORDERS */}
@@ -735,7 +713,6 @@ const Navbar = () => {
             </div>
           </div>
 
-
           {/* SEARCH */}
           <div className="px-4 pb-3">
 
@@ -772,7 +749,6 @@ const Navbar = () => {
             </Link>
 
           </div>
-
 
           {/* =====================================================
               PROFILE BOTTOM SHEET
@@ -837,7 +813,6 @@ const Navbar = () => {
 
                 </div>
 
-
                 {/* LOGIN */}
                 {!token && (
                   <Link
@@ -872,7 +847,6 @@ const Navbar = () => {
                   </Link>
                 )}
 
-
                 {/* MY ORDERS */}
                 {token && (
                   <button
@@ -906,43 +880,6 @@ const Navbar = () => {
                   </button>
                 )}
 
-
-                {/* ADMIN */}
-                {role === "admin" && (
-                  <button
-                    onClick={() => {
-                      setMobileMenu(false);
-
-                      window.location.href =
-                        "http://localhost:5174/";
-                    }}
-                    className="flex w-full items-center gap-4 border-b py-4 text-left"
-                  >
-
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-purple-50">
-                      ⚙️
-                    </div>
-
-                    <div className="flex-1">
-
-                      <p className="font-semibold text-gray-800">
-                        Admin Dashboard
-                      </p>
-
-                      <p className="text-xs text-gray-500">
-                        Manage your store
-                      </p>
-
-                    </div>
-
-                    <span className="text-xl text-gray-400">
-                      ›
-                    </span>
-
-                  </button>
-                )}
-
-
                 {/* CART */}
                 <button
                   onClick={() => {
@@ -975,7 +912,6 @@ const Navbar = () => {
                   </span>
 
                 </button>
-
 
                 {/* LOGOUT */}
                 {token && (
@@ -1019,4 +955,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

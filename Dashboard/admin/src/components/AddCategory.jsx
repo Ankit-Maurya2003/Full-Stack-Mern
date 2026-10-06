@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const API = "http://localhost:4005/category";
+const API = "https://full-stack-mern-qqdj.onrender.com/category";
 
 const icons = [
   "🥬",
