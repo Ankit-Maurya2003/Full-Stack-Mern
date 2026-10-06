@@ -29,7 +29,7 @@ const Navbar = () => {
     decrease,
   } = useCart();
 
-  const handlingCharge = 150;
+  const handlingCharge = 10;
   const grandTotal = Number(totalPrice()) + handlingCharge;
 
   const [error, setError] = useState({});

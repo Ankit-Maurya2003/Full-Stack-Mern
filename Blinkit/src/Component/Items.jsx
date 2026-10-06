@@ -3318,7 +3318,7 @@ export const products = [
     title: "Amul milk",
     category: "Dairy, Bread & Eggs",
     weight: "500 g",
-    mrp: 30,
+    mrp: 1,
     img: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/da/cms-assets/cms/product/628c97e0-5ed4-425d-a667-1d3bfa6f0bde.png",
   },
   {
