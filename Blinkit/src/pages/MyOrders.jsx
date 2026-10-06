@@ -13,7 +13,7 @@ import {
   RefreshCw,
 } from "lucide-react";
 
-const API = "http://localhost:4005/order";
+const API = "https://full-stack-mern-qqdj.onrender.com/order";
 
 const MyOrders = () => {
   const [orders, setOrders] = useState([]);

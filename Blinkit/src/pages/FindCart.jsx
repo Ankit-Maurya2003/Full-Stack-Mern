@@ -22,7 +22,7 @@ const filteredProducts = allProducts.filter((item) =>
 
   return (
     <>
-    <div className='mt-30   h-screen z-500'>
+    <div className='mt-50   h-screen z-500'>
           {
       search ? (
         <div className='inset-0 fixed h-auto z-150 md:mt-20 mt-40 bg-white scrollbar-none overflow-y-scroll '>

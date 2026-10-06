@@ -334,7 +334,7 @@ const Payment = () => {
 
       const response =
         await axios.post(
-          "http://localhost:4005/order/create",
+          "https://full-stack-mern-qqdj.onrender.com/order/create",
           {
             customerName:
               `${formData.name} ${formData.last}`.trim(),
@@ -559,11 +559,11 @@ const Payment = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 ">
 
       {/* ================= HEADER ================= */}
 
-      <header className="sticky top-0 z-50 border-b bg-white">
+      <header className="sticky top-0 mt-20 lg:mt-0 z-60 border-b bg-white">
 
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
 
@@ -605,7 +605,7 @@ const Payment = () => {
 
       {/* ================= MAIN ================= */}
 
-      <main className="mx-auto max-w-7xl px-4 py-6">
+      <main className="mx-auto max-w-7xl px-4 py-6  bg-white ">
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
 

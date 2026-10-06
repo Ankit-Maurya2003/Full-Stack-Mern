@@ -735,15 +735,16 @@ const Navbar = () => {
                   />
                 </svg>
 
-                <input
-                  type="text"
-                  placeholder='Search "chocolate"'
-                  value={search}
-                  onChange={(e) => setSearch(e.target.value)}
-                  onClick={(e) => e.stopPropagation()}
-                  className="ml-3 w-full bg-transparent text-sm outline-none placeholder-gray-500"
-                />
-
+              
+              
+                  <input
+                    type="text"
+                    placeholder='Search "chocolate"'
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                    className="ml-3 w-full truncate bg-transparent text-lg outline-none placeholder-gray-500"
+                  />
+         
               </div>
 
             </Link>
